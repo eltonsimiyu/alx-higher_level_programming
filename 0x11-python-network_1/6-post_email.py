@@ -1,12 +1,13 @@
 #!/usr/bin/python3
+"""
+Python script that takes in a URL and an email address,
+sends a POST request to the passed URL with the email,
+and displays the body of the response
+"""
 import requests
-from sys import argv
-"""
-script to send post request to passed url with email and display
-body as response
-"""
+import sys
 
 
 if __name__ == "__main__":
-    reply = requests.post(argv[1], {'email': argv[2]})
-    print(reply.text)
+    r = requests.post(sys.argv[1], data={'email': sys.argv[2]})
+    print(r.text)
